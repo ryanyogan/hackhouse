@@ -31,6 +31,9 @@
     },
     "server-util-interfaces": {
       "tags": []
+    },
+    "server-graphql": {
+      "tags": []
     }
   }
 }

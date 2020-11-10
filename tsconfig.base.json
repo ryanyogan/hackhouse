@@ -19,7 +19,8 @@
     "paths": {
       "@hackhouse/server/util-interfaces": [
         "libs/server/util-interfaces/src/index.ts"
-      ]
+      ],
+      "@hackhouse/server/graphql": ["libs/server/graphql/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
