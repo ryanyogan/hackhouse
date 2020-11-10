@@ -27,7 +27,9 @@
   },
   "private": true,
   "dependencies": {
-    "express": "4.17.1"
+    "apollo-server-express": "^2.19.0",
+    "express": "4.17.1",
+    "graphql": "^15.4.0"
   },
   "devDependencies": {
     "@nrwl/cli": "10.3.2",
