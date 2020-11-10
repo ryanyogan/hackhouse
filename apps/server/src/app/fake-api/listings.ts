@@ -1,3 +1,5 @@
+import { Listing } from '@hackhouse/server/util-interfaces';
+
 export const listings: Listing[] = [
   {
     id: '001',
@@ -36,15 +38,3 @@ export const listings: Listing[] = [
     rating: 3,
   },
 ];
-
-export interface Listing {
-  id: string;
-  title: string;
-  image: string;
-  address: string;
-  price: number;
-  numOfGuests: number;
-  numOfBeds: number;
-  numOfBaths: number;
-  rating: number;
-}

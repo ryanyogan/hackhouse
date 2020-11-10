@@ -17,7 +17,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@hackhouse/listings": ["libs/listings/src/index.ts"]
+      "@hackhouse/server/util-interfaces": [
+        "libs/server/util-interfaces/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -29,7 +29,7 @@
     "server": {
       "tags": []
     },
-    "listings": {
+    "server-util-interfaces": {
       "tags": []
     }
   }

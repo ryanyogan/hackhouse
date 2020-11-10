@@ -51,22 +51,22 @@
         }
       }
     },
-    "listings": {
-      "root": "libs/listings",
-      "sourceRoot": "libs/listings/src",
+    "server-util-interfaces": {
+      "root": "libs/server/util-interfaces",
+      "sourceRoot": "libs/server/util-interfaces/src",
       "projectType": "library",
       "schematics": {},
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/listings/**/*.ts"]
+            "lintFilePatterns": ["libs/server/util-interfaces/**/*.ts"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/listings/jest.config.js",
+            "jestConfig": "libs/server/util-interfaces/jest.config.js",
             "passWithNoTests": true
           }
         }
