@@ -92,6 +92,77 @@
           }
         }
       }
+    },
+    "server-mongodb": {
+      "root": "libs/server/mongodb",
+      "sourceRoot": "libs/server/mongodb/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/server/mongodb/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/server/mongodb/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "seeder": {
+      "root": "apps/seeder",
+      "sourceRoot": "apps/seeder/src",
+      "projectType": "application",
+      "prefix": "seeder",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/seeder",
+            "main": "apps/seeder/src/main.ts",
+            "tsConfig": "apps/seeder/tsconfig.app.json",
+            "assets": ["apps/seeder/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/seeder/src/environments/environment.ts",
+                  "with": "apps/seeder/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "seeder:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/seeder/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/seeder/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

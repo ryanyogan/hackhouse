@@ -1,5 +1,7 @@
+import { Collection, ObjectId } from 'mongodb';
+
 export interface Listing {
-  id: string;
+  id: ObjectId;
   title: string;
   image: string;
   address: string;
@@ -10,9 +12,13 @@ export interface Listing {
   rating: number;
 }
 
+export interface Database {
+  listings: Collection<Listing>;
+}
+
 export const listings: Listing[] = [
   {
-    id: '001',
+    id: new ObjectId(),
     title: 'Clean and fully furnished apartment. 5 min away from CN Tower',
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560641352/mock/Toronto/toronto-listing-1_exv0tf.jpg',
@@ -24,7 +30,7 @@ export const listings: Listing[] = [
     rating: 5,
   },
   {
-    id: '002',
+    id: new ObjectId(),
     title: 'Luxurious home with private pool',
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560645376/mock/Los%20Angeles/los-angeles-listing-1_aikhx7.jpg',
@@ -36,7 +42,7 @@ export const listings: Listing[] = [
     rating: 4,
   },
   {
-    id: '003',
+    id: new ObjectId(),
     title: 'Single bedroom located in the heart of downtown San Fransisco',
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560646219/mock/San%20Fransisco/san-fransisco-listing-1_qzntl4.jpg',

@@ -9,6 +9,7 @@
     "test": "nx test",
     "lint": "nx workspace-lint && nx lint",
     "e2e": "nx e2e",
+    "seed": "ts-node --skip-project libs/server/temp/src/lib/seed --lib=ES2015",
     "affected:apps": "nx affected:apps",
     "affected:libs": "nx affected:libs",
     "affected:build": "nx affected:build",
@@ -29,18 +30,20 @@
   "dependencies": {
     "apollo-server-express": "^2.19.0",
     "express": "4.17.1",
-    "graphql": "^15.4.0"
+    "graphql": "^15.4.0",
+    "mongodb": "^3.6.3"
   },
   "devDependencies": {
     "@nrwl/cli": "10.3.2",
     "@nrwl/eslint-plugin-nx": "10.3.2",
     "@nrwl/express": "^10.3.2",
     "@nrwl/jest": "10.3.2",
-    "@nrwl/node": "10.3.2",
+    "@nrwl/node": "10.3.3",
     "@nrwl/nx-cloud": "latest",
     "@nrwl/workspace": "10.3.2",
     "@types/express": "4.17.0",
     "@types/jest": "26.0.8",
+    "@types/mongodb": "^3.5.33",
     "@types/node": "~8.9.4",
     "@typescript-eslint/eslint-plugin": "4.3.0",
     "@typescript-eslint/parser": "4.3.0",
