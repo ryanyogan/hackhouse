@@ -40,6 +40,22 @@
     },
     "seeder": {
       "tags": []
+    },
+    "client": {
+      "tags": []
+    },
+    "client-e2e": {
+      "tags": [],
+      "implicitDependencies": ["client"]
+    },
+    "client-ui-sections": {
+      "tags": []
+    },
+    "client-utils": {
+      "tags": []
+    },
+    "types": {
+      "tags": []
     }
   }
 }

@@ -22,7 +22,10 @@
       ],
       "@hackhouse/server/graphql": ["libs/server/graphql/src/index.ts"],
       "@hackhouse/server/mongodb": ["libs/server/mongodb/src/index.ts"],
-      "@hackhouse/server/temp": ["libs/server/temp/src/index.ts"]
+      "@hackhouse/server/temp": ["libs/server/temp/src/index.ts"],
+      "@hackhouse/client/ui-sections": ["libs/client/ui-sections/src/index.ts"],
+      "@hackhouse/client/utils": ["libs/client/utils/src/index.ts"],
+      "@hackhouse/types": ["libs/types/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
