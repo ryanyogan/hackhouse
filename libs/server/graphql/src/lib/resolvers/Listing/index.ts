@@ -2,7 +2,7 @@ import { Database, Listing } from '@hackhouse/server/util-interfaces';
 import { IResolvers } from 'apollo-server-express';
 import { ObjectId } from 'mongodb';
 
-export const resolvers: IResolvers = {
+export const listingResolvers: IResolvers = {
   Query: {
     listings: async (
       _root: undefined,
