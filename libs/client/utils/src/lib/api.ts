@@ -1,9 +1,10 @@
-interface Body {
+interface Body<TVariables> {
   query: string;
+  variables?: TVariables;
 }
 
 export const server = {
-  fetch: async <TData = never>(body: Body) => {
+  fetch: async <TData = never, TVariables = never>(body: Body<TVariables>) => {
     const res = await fetch('/api', {
       method: 'POST',
       headers: {
