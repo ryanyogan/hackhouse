@@ -1,11 +1,10 @@
-import { server } from '@hackhouse/client/utils';
+import { server, useQuery } from '@hackhouse/client/utils';
 import {
   DeleteListingData,
   DeleteListingVariables,
-  Listing,
   ListingsData,
 } from '@hackhouse/types';
-import React, { useState } from 'react';
+import React from 'react';
 import './listings.css';
 
 const LISTINGS = `
@@ -37,15 +36,7 @@ interface ListingsProps {
 }
 
 export const Listings = ({ title }: ListingsProps) => {
-  const [listings, setListings] = useState<Listing[] | null>(null);
-
-  const fetchListings = async () => {
-    const { data } = await server.fetch<ListingsData>({
-      query: LISTINGS,
-    });
-
-    setListings(data.listings);
-  };
+  const { data } = useQuery<ListingsData>(LISTINGS);
 
   const deleteListing = async (id: string) => {
     await server.fetch<DeleteListingData, DeleteListingVariables>({
@@ -54,9 +45,9 @@ export const Listings = ({ title }: ListingsProps) => {
         id,
       },
     });
-
-    fetchListings();
   };
+
+  const listings = data ? data.listings : null;
 
   const listingsList = listings ? (
     <ul>
@@ -73,7 +64,6 @@ export const Listings = ({ title }: ListingsProps) => {
     <div>
       <h2>{title}</h2>
       {listingsList}
-      <button onClick={fetchListings}>Load Listings</button>
     </div>
   );
 };
